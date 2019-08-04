@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "name": "netlify-to-twitter",
+  "alias": "netlify2twitter.now.sh",
+  "builds": [{ "src": "api/**/*.js", "use": "@now/node" }],
+  "routes": [
+    {
+      "src": "/api/webhook.js",
+      "methods": ["POST"],
+      "dest": "/api/webhook.js"
+    }
+  ],
+  "env": {
+    "TWITTER_CONSUMER_KEY": "@twitter-consumer-key",
+    "TWITTER_SECRET": "@twitter-secret",
+    "TWITTER_ACCESS_TOKEN": "@twitter-access-token",
+    "TWITTER_USER_SECRET": "@twitter-user-secret"
+  }
+}
